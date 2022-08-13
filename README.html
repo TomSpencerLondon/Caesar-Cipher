@@ -1,0 +1,80 @@
+Exercise for the final project for Module 1
+<p>----------------------------------------</p>
+We're going to jump into the theoretical knowledge you'll need when writing the final project. Let's learn more about cryptology and its constituent parts. And at the same time, we'll learn more about the cipher that you will use when writing the final project...
+<p>----------------------------------------</p>
+<h2>Cryptology, cryptography and cryptanalysis</h2>
+<p>Let's jump into the theoretical knowledge you'll need when writing the final project. Let's learn more about cryptography and its constituent parts. And at the same time, we'll learn more about the cipher that you will use when writing the final project.</p>
+<h3>1. Cryptology and its constituent parts</h3>
+<p><span class="text-bold">Cryptology</span> is a field of knowledge that includes:</p>
+<ul>
+  <li>
+    <p><span class="text-bold">Cryptography</span> (the science of ciphers). </p>
+    <p>Cryptography is all about encrypting information to protect it from unauthorized access. This information could be text, a digital image, an audio signal, etc. The encryption process produces an encrypted version of the information (data), which is called the ciphertext or codetext.</p>
+  </li>
+  <li>
+    <p><span class="text-bold">Cryptanalysis</span> (methods for cracking these ciphers). </p>
+    <p>Cryptanalysis examines methods of breaking ciphers and how these methods can be applied. In other words, cryptanalysis performs the inverse task, studying ways to turn encrypted information into plaintext. </p>
+  </li>
+</ul>
+<h3>2. Cryptographic key</h3>
+<p>A key is a selection of data that is used to encrypt and decrypt information. The ability to successfully decrypt information depends on what key is used. If a key is lost for some reason, then it will be impossible to decrypt the data. </p>
+<p>The size of cryptographic keys is measured in bits. And this means that a cryptographic key has a <span class="text-bold">length</span>. Good encryption strength is provided with a length of 128 bits. </p>
+<h3>Types of cryptographic keys:</h3>
+<ol>
+  <li>
+    <p>Symmetric keys (secret keys). Unsurprisingly, such keys are used in what are known as symmetric-key algorithms. Their main purpose is to perform forward or reverse cryptographic transformations (encryption/decryption, verification of the message authentication code). </p>
+  </li>
+  <li>
+    <p>Asymmetric keys. They are used in asymmetric-key encryption algorithms (for example, when verifying an electronic digital signature). </p>
+  </li>
+</ol>
+<p>Since we'll be working with a symmetric-key encryption algorithm, we won't go into too much detail here.</p>
+<h2>3. Substitution alphabet</h2>
+<p>A <span class="text-bold">substitution alphabet</span> is a complete set of characters used to encode input characters.</p>
+<h3>4. Approaches to cryptanalysis</h3>
+<p>There are many different cryptanalysis approaches and methods, i.e. ways to crack ciphers. </p>
+<p>We'll describe the simplest of them: </p>
+<ol>
+  <li>
+    <p><span class="text-bold">Brute force</span> (or brute force search) is trying all possible keys until we find the correct one. The advantage of this method is its simplicity. The disadvantage is that it is not suitable for ciphers involving a large number of possible keys.</p>
+  </li>
+  <li>
+    <p><span class="text-bold">Cryptanalysis based on statistical data</span> — in this approach, we gather statistics on the occurrence of different characters in the ciphertext, and then we decrypt based on statistics on the frequency of occurrence of different characters in plaintext. </p>
+    <p><em>For example: we know that the frequency of the letter P in English texts is 1.9%. As we analyze the ciphertext, we look for a symbol that occurs with the same frequency and then conclude that it is the letter P.</em></p>
+    <p>The disadvantage of this approach is its dependence on the specific language, author, and style of the text.</p>
+  </li>
+</ol>
+<h3>5. Caesar cipher</h3>
+<p>This is one of the simplest and most well-known encryption methods. Its name, of course, comes from the Emperor Gaius Julius Caesar, who used this method to correspond secretly with generals. </p>
+<p>A Caesar cipher is a substitution cipher in which each character in the plaintext is replaced by a character that is some constant number of positions to its left or right in the alphabet. </p>
+<p>Let's say we set the shift to 3. In this case, A will be replaced by D, B will become E, and so on. </p>
+<p>This is the minimum amount of theory you will need to complete the final project. Let's move on to the task description!</p>
+<h2>Final project for the Java Syntax module. Let's write a cryptanalyzer</h2>
+<p><span class="text-bold">Your task is to write a program that works with Caesar ciphers.</span></p>
+<p>Let's say that the substitution alphabet consists of all the letters of the English alphabet, periods, commas, double quotation marks, colons, hyphen, exclamation points, question marks, and spaces. If you encounter characters that are not part of our substitution alphabet, then just skip them. </p>
+<h3>Main requirements</h3>
+<p>The program should have 2 modes:</p>
+<ol>
+  <li>
+    <p><span class="text-bold">Encryption/decryption.</span> The program must encrypt and decrypt text using a given cryptographic key. </p>
+    <p>The program should receive a path to a text file containing source text and create a file containing the corresponding ciphertext. </p>
+  </li>
+  <li>
+    <p><span class="text-bold">Cryptanalysis.</span> In this mode, the program must crack the ciphertext contained in an input text file. The user should be able to choose one of two cryptanalysis methods. </p>
+  </li>
+</ol>
+<h3>Details about the choice of cryptanalysis methods</h3>
+<ol>
+  <li>
+    <p><span class="text-bold">If the user selects brute force</span>, then the program must independently enumerate the possible keys, select the correct key, and decrypt the text. </p>
+    <p>Think about what criteria the program should use to successfully identify the correct key. </p>
+    <p>You may need to pay attention to the spaces between words or the correct use of punctuation marks. </p>
+  </li>
+  <li>
+    <p>If the user <span class="text-bold">selects statistical analysis mode</span>, then prompt the user to load an additional text file in plaintext, preferably by the same author and in the same style. </p>
+    <p>Based on the contents of the second file, the program should compile statistics on the occurrence of characters and then try to use these statistics to perform cryptanalysis of the ciphertext. </p>
+  </li>
+</ol>
+<h3>Additional requirements</h3>
+<p>Make dialog boxes for interaction with the user at your discretion. If desired, you can use the Swing and JavaFX graphic frameworks. </p>
+<p>Upload your finished solution to a public Git repository.</p>
