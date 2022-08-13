@@ -1,6 +1,13 @@
 package com.tomspencerlondon;
 
 public class CaesarCipher {
+
+  private CipherBreaker breaker;
+
+  public CaesarCipher(CipherBreaker breaker) {
+    this.breaker = breaker;
+  }
+
   String cipher(String message, int offset) {
     StringBuilder result = new StringBuilder();
 
