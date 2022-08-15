@@ -9,7 +9,7 @@ public class CipherBreakerTest {
   @Test
   void findsOffset() {
     CipherBreaker breaker = new CipherBreaker();
-    CaesarCipher cipher = new CaesarCipher(breaker);
+    CaesarCipher cipher = new CaesarCipher();
     int offset = breaker.probableOffset("ro dyvn wo s myevn xofob dokmr k vvkwk dy nbsfo", cipher);
     assertThat(offset).isEqualTo(10);
 

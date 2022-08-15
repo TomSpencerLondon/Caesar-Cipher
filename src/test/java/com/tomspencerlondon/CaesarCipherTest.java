@@ -8,7 +8,7 @@ public class CaesarCipherTest {
 
   @Test
   void encryptsWithOffset3() {
-    CaesarCipher cipher = new CaesarCipher(new CipherBreaker());
+    CaesarCipher cipher = new CaesarCipher();
 
     String cipheredMessage = cipher.cipher("he told me i could never teach a llama to drive", 3);
 
@@ -18,7 +18,7 @@ public class CaesarCipherTest {
 
   @Test
   void decipherWorks() {
-    CaesarCipher cipher = new CaesarCipher(new CipherBreaker());
+    CaesarCipher cipher = new CaesarCipher();
 
     String decipheredSentence = cipher.decipher("ro dyvn wo s myevn xofob dokmr k vvkwk dy nbsfo", 36);
     assertThat(decipheredSentence)
